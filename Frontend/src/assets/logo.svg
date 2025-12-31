@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="HackBuzz logo">
+  <!-- Background -->
+  <rect x="5" y="5" width="90" height="90" rx="22" fill="#0F172A"></rect>
+
+  <!-- H -->
+  <rect x="26" y="28" width="8" height="44" fill="#38BDF8"></rect>
+  <rect x="42" y="28" width="8" height="44" fill="#38BDF8"></rect>
+  <rect x="26" y="48" width="24" height="6" fill="#38BDF8"></rect>
+
+  <!-- B -->
+  <rect x="56" y="28" width="8" height="44" fill="#22D3EE"></rect>
+  <path d="M64 28 H74 A10 10 0 0 1 74 48 H64 Z
+       M64 48 H76 A12 12 0 0 1 76 72 H64 Z" fill="#22D3EE"></path>
+</svg>
