@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import homeImg from "../assets/home.png";
@@ -45,37 +45,6 @@ const Home = () => {
     counters.forEach((counter) => observer.observe(counter));
   }, []);
 
-  const text = "Student Hub for";
-  const typingSpeed = 80;
-  const deletingSpeed = 50;
-  const pauseTime = 1200;
-  const [displayText, setDisplayText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    let timeout;
-    if (!isDeleting && index < text.length) {
-      timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + text[index]);
-        setIndex(index + 1);
-      }, typingSpeed);
-    } else if (!isDeleting && index === text.length) {
-      timeout = setTimeout(() => {
-        setIsDeleting(true);
-      }, pauseTime);
-    } else if (isDeleting && index > 0) {
-      timeout = setTimeout(() => {
-        setDisplayText((prev) => prev.slice(0, -1));
-        setIndex(index - 1);
-      }, deletingSpeed);
-    } else if (isDeleting && index === 0) {
-      setIsDeleting(false);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [index, isDeleting]);
-
   return (
     <>
       <Header variant="home" />
@@ -92,8 +61,7 @@ const Home = () => {
           </div>
           <div className="flex-1 text-center lg:text-center animate-fadeIn">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
-              {displayText}
-              <span className="animate-pulse">|</span>
+              Student Hub for
               <br />
               <span className="bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
                 Hacks & Collabs
