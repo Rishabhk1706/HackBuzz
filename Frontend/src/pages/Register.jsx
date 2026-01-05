@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import loginphoto from "../assets/loginphoto.png";
 
 const Create = () => {
+  const navigate = useNavigate();
   const [colleges, setColleges] = useState([]);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -22,8 +24,8 @@ const Create = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) {
-      window.location.href = "/dashboard";
+    if(token){
+      navigate("/dashboard", { replace: true });
     }
   }, []);
 
@@ -86,6 +88,10 @@ const Create = () => {
   };
 
   const verifyOtpAndRegister = async () => {
+    if(!otp.trim()){
+      alert("Please enter OTP");
+      return;
+    }
     try {
       setLoading(true);
 
@@ -103,7 +109,7 @@ const Create = () => {
       });
 
       alert("Account created successfully!");
-      window.location.href = "/login";
+      navigate("/login");
     } catch (err) {
       alert(err.response?.data?.error || "OTP verification failed");
     } finally {
@@ -126,9 +132,9 @@ const Create = () => {
             <h2 className="text-2xl font-bold mb-2">Create an account</h2>
             <p className="text-gray-400 mb-6">
               Already have an account?{" "}
-              <a href="/login" className="text-purple-400 hover:underline">
+              <Link to="/login" className="text-purple-400 hover:underline">
                 Log in
-              </a>
+              </Link>
             </p>
 
             <form
@@ -209,9 +215,9 @@ const Create = () => {
                 />
                 <label>
                   I agree to the{" "}
-                  <a href="/terms" className="text-purple-400">
+                  <Link to="/terms" className="text-purple-400">
                     Terms & Conditions
-                  </a>
+                  </Link>
                 </label>
               </div>
 

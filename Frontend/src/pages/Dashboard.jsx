@@ -84,7 +84,6 @@ const Dashboard = () => {
 
       <main className="pt-32 px-6 max-w-7xl mx-auto flex-grow w-full">
 
-        {/* Slideshow */}
         <div className="relative h-[450px] rounded-3xl overflow-hidden shadow-2xl mb-12 group">
           <img
             src={slides[slideIndex].img}

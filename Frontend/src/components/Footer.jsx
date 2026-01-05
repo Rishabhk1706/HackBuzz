@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -6,21 +7,23 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <h3 className="font-bold mb-2">HackBuzz</h3>
-          <p>Empowering students to connect, create, and collaborate in the world of technology and innovation.</p>
+          <p>
+            Empowering students to connect, create, and collaborate in the world of technology and innovation.
+          </p>
         </div>
         <div>
           <h3 className="font-bold mb-2">Quick Links</h3>
-          <p><a href="/colleges" className="hover:underline">Explore Colleges</a></p>
-          <p><a href="/allevents" className="hover:underline">Browse Events</a></p>
-          <p><a href="/allprojects" className="hover:underline">View Projects</a></p>
-          <p><a href="/dashboard" className="hover:underline">Dashboard</a></p>
+          <p><Link to="/colleges" className="hover:underline">Explore Colleges</Link></p>
+          <p><Link to="/allevents" className="hover:underline">Browse Events</Link></p>
+          <p><Link to="/allprojects" className="hover:underline">View Projects</Link></p>
+          <p><Link to="/dashboard" className="hover:underline">Dashboard</Link></p>
         </div>
         <div>
           <h3 className="font-bold mb-2">For Students</h3>
-          <p><a href="/create" className="hover:underline">Sign Up</a></p>
-          <p><a href="/login" className="hover:underline">Login</a></p>
-          <p><a href="/help" className="hover:underline">Help Center</a></p>
-          <p><a href="/terms" className="hover:underline">Terms & Conditions</a></p>
+          <p><Link to="/create" className="hover:underline">Sign Up</Link></p>
+          <p><Link to="/login" className="hover:underline">Login</Link></p>
+          <p><Link to="/help" className="hover:underline">Help Center</Link></p>
+          <p><Link to="/terms" className="hover:underline">Terms & Conditions</Link></p>
         </div>
         <div>
           <h3 className="font-bold mb-2">Contact</h3>

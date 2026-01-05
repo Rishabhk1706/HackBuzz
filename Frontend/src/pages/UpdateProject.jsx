@@ -74,15 +74,12 @@ const UpdateProject = () => {
     }
   };
 
-  // ➕ Role
   const addRole = () =>
     setRoles([...roles, { role: "", description: "", count: 1 }]);
 
-  // ➕ Availability
   const addAvailability = () =>
     setAvailability([...availability, { day: "Monday", time: "" }]);
 
-  // 💾 Update project
   const submitUpdate = async () => {
     try {
       await axios.put(

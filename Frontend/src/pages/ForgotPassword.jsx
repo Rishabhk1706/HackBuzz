@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import loginphoto from "../assets/loginphoto.png";
 
 const ForgotPassword = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
@@ -50,7 +52,7 @@ const ForgotPassword = () => {
         newPassword,
       });
       alert("Password reset successful");
-      window.location.href = "/login";
+      navigate("/login");
     } catch (err) {
       alert(err.response?.data?.error || "Failed to reset password");
     } finally {
@@ -65,12 +67,15 @@ const ForgotPassword = () => {
       <main className="flex-grow flex items-center justify-center pt-40 pb-40 px-4">
         <div className="flex flex-col md:flex-row bg-black shadow-2xl rounded-lg overflow-hidden w-full max-w-4xl min-h-[400px]">
           
-          <a href="/login" className="block flex-1 min-h-[220px] md:min-h-0">
+          <div
+            onClick={() => navigate("/login")}
+            className="block flex-1 min-h-[220px] md:min-h-0 cursor-pointer"
+          >
             <div
               className="h-40 md:h-full w-full bg-cover bg-center"
               style={{ backgroundImage: `url(${loginphoto})` }}
             />
-          </a>
+          </div>
 
           <div className="flex-1 p-8 flex flex-col justify-center bg-black text-white">
             <h2 className="text-2xl font-bold mb-2">
@@ -103,12 +108,13 @@ const ForgotPassword = () => {
                   {loading ? "Sending OTP..." : "Send OTP"}
                 </button>
 
-                <a
-                  href="/login"
-                  className="text-sm text-purple-300 text-center hover:underline mt-2"
+                <button
+                  type="button"
+                  onClick={() => navigate("/login")}
+                  className="text-sm text-purple-300 text-center hover:underline mt-2 bg-transparent border-none cursor-pointer"
                 >
                   Back to login
-                </a>
+                </button>
               </div>
             )}
 

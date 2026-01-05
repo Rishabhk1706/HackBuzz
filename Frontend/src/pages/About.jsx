@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import aboutImg from "../assets/about.png";
@@ -90,15 +91,15 @@ const About = () => {
             Connect with innovators, join groundbreaking hackathons, and make your
             mark in the tech world. The future belongs to creators – are you one of them?
             </p>
-            <a
-            href="/register"
+            <Link
+            to="/register"
             className="relative inline-block px-8 py-3 rounded-full font-semibold text-lg 
             bg-gradient-to-r from-blue-600 to-purple-600 
             text-white shadow-md 
             hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300"
             >
             🚀 Join the Community
-            </a>
+            </Link>
         </div>
         </section>
 

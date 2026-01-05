@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import homeImg from "../assets/home.png";
@@ -74,22 +75,22 @@ const Home = () => {
             </p>
 
             <div className="flex gap-4 justify-center flex-wrap animate-slideUp delay-300">
-              <a
-                href="/register"
+              <Link
+                to="/register"
                 className="bg-gradient-to-r from-pink-500 to-purple-700 px-8 py-3 rounded-full
                           text-white font-semibold shadow-lg hover:scale-105 hover:shadow-2xl
                           transition-transform duration-300"
               >
                 Get Registered
-              </a>
-              <a
-                href="/colleges"
+              </Link>
+              <Link
+                to="/colleges"
                 className="bg-gradient-to-r from-red-400 to-yellow-400 px-8 py-3 rounded-full
                           text-white font-semibold shadow-lg hover:scale-105 hover:shadow-2xl
                           transition-transform duration-300"
               >
                 Explore Colleges
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -166,9 +167,9 @@ const Home = () => {
           <p className="text-gray-700 mb-6">
             Join thousands of students who are already connecting, creating, and collaborating on HackBuzz.
           </p>
-          <a href="/register" className="bg-gradient-to-r from-pink-500 to-purple-700 px-6 py-3 rounded-full text-white font-semibold shadow-md">
+          <Link to="/register" className="bg-gradient-to-r from-pink-500 to-purple-700 px-6 py-3 rounded-full text-white font-semibold shadow-md">
             Join the Community
-          </a>
+          </Link>
         </div>
       </section>
 

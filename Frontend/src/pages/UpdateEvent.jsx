@@ -183,7 +183,6 @@ const UpdateEvent = () => {
         </div>
       </main>
 
-      {/* Edit Modal */}
       {editOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-xl w-full max-w-lg">
@@ -229,7 +228,6 @@ const UpdateEvent = () => {
         </div>
       )}
 
-      {/* Users Modal */}
       {usersOpen && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-xl w-full max-w-lg">

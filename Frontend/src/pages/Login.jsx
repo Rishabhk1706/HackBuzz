@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import loginphoto from "../assets/loginphoto.png";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPwd, setShowPwd] = useState(false);
@@ -14,7 +16,7 @@ const LoginPage = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if(token){
-        window.location.href = "/dashboard";
+        navigate("/dashboard");
         return;
     }
 
@@ -44,7 +46,7 @@ const LoginPage = () => {
       }
       setLoginMsg({ text: "Login successful!", type: "success" });
       setTimeout(() => {
-        window.location.href = "/dashboard";
+        navigate("/dashboard");
       }, 1000);
     } catch (error) {
       const msg =
@@ -59,20 +61,20 @@ const LoginPage = () => {
 
             <main className="flex-grow flex items-center justify-center pt-40 pb-40 px-4">
                 <div className="flex flex-col md:flex-row bg-black shadow-2xl rounded-lg overflow-hidden w-full max-w-4xl min-h-[400px]">
-                    <a href="/home" className="block flex-1 min-h-[220px] md:min-h-0">
+                    <Link to="/" className="block flex-1 min-h-[220px] md:min-h-0">
                         <div
                             className="h-40 md:h-full w-full bg-cover bg-center"
                             style={{ backgroundImage: `url(${loginphoto})` }}
                         />
-                    </a>
+                    </Link>
 
                     <div className="flex-1 p-8 flex flex-col justify-center bg-black text-white">
                         <h2 className="text-2xl font-bold mb-2">Log in to your account</h2>
                         <p className="text-sm mb-5">
                             Don't have an account?{" "}
-                            <a href="/register" className="text-purple-300 hover:underline">
+                            <Link to="/register" className="text-purple-300 hover:underline">
                                 Create one
-                            </a>
+                            </Link>
                         </p>
 
                         <form className="flex flex-col gap-3" onSubmit={handleLogin}>
@@ -108,9 +110,9 @@ const LoginPage = () => {
                                     <input type="checkbox" className="accent-purple-500" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)}/>
                                     Remember me
                                 </label>
-                                <a href="/forgot-password" className="text-purple-300 hover:underline">
+                                <Link to="/forgot-password" className="text-purple-300 hover:underline">
                                     Forgot password?
-                                </a>
+                                </Link>
                             </div>
 
                             {loginMsg.text && (
