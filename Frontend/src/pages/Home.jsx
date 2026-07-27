@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import homeImg from "../assets/home.png";
+import homeImg from "../assets/home.webp";
 import landingbg from "../assets/landingbg.png";
 
 const Home = () => {
