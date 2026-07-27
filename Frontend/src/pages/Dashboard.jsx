@@ -4,9 +4,9 @@ import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-import eventImg from "../assets/event.png";
-import projectImg from "../assets/project.png";
-import teamImg from "../assets/team.png";
+import eventImg from "../assets/event.webp";
+import projectImg from "../assets/project.webp";
+import teamImg from "../assets/team.webp";
 
 const slides = [
   { img: eventImg, text: "Connect with Amazing Peers at our Events", link: "/events" },
