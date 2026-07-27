@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import aboutImg from "../assets/about.png";
+import aboutImg from "../assets/about.webp";
 const About = () => {
   return (
     <>
