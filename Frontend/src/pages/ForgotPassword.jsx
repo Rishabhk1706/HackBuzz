@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import loginphoto from "../assets/loginphoto.png";
+import loginphoto from "../assets/loginphoto.webp";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
